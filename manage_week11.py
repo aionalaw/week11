@@ -1,12 +1,13 @@
-from flask import Flask, url_for, redirect, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, flash
 
 
 import sqlite3 as sql
-app = Flask(__name__)
+app = Flask(__name__, template_folder='week11')
+app.secret_key = "key"
 
 conn = sql.connect('employee.db')
 c = conn.cursor()
-c.execute('''CREATE TABLE employee (
+c.execute('''CREATE TABLE IF NOT EXISTS employee (
           EmpName TEXT,
           EmpGender TEXT,
           EmpPhone TEXT,
