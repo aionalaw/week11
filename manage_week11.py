@@ -1,14 +1,20 @@
 import sqlite3 as sql
-
+import mysql.connector as mysql
 
 from flask import Flask, render_template, request, redirect, url_for, flash
+from flask_bootstrap import Bootstrap
 
 
+app = Flask(__name__, template_folder = '/home/aiona/flask_work' )
+Bootstrap(app)
 
-app = Flask(__name__, template_folder='/home/aiona/flask_work')
-app.secret_key = "key"
+conn = mysql.connect(
+   host='localhost',
+   user='project',
+   password='aionalaw',
+   database = 'employee'
+)
 
-conn = sql.connect('employee.db')
 c = conn.cursor()
 c.execute('''CREATE TABLE IF NOT EXISTS employee (
           EmpID INTEGER PRIMARY KEY,
@@ -36,21 +42,31 @@ def addrec():
       phone = request.form['EmpPhone']
       bdate = request.form['EmpBdate']
          
-      conn = sql.connect('employee.db')  
+      conn = mysql.connect(
+         host='localhost',
+         user='project',
+         password='aionalaw',
+         database='employee'
+      )  
       c = conn.cursor()
-      c.execute("INSERT INTO employee (EmpID, EmpName, EmpGender, EmpPhone, EmpBdate) VALUES (?,?,?,?,?)" , (id,name,gender,phone,bdate))
+      c.execute("INSERT INTO employee (EmpID, EmpName, EmpGender, EmpPhone, EmpBdate) VALUES ({0},{1},{2},{3},{4})" , (id,name,gender,phone,bdate))
    
       conn.commit()
       conn.close()
 
-   return render_template(employee.html)
+   return render_template('employee.html')
 
 @app.route('/info')
 def info():
-   with sql.connect('employee.db') as con:
-      cur = con.cursor()
-      cur.execute("select * from employee")
-      rows = cur.fetchall(); 
+   conn = mysql.connect(
+      host='localhost',
+      user='project',
+      password='aionalaw',
+      database='employee')
+   
+   cur = conn.cursor()
+   cur.execute("select * from employee")
+   rows = cur.fetchall(); 
    
 
    return render_template("info.html",rows = rows)
