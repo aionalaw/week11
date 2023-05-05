@@ -1,20 +1,37 @@
 <html>
     <body>
+        <h3> Employee Information Entry</h3>
         <form action = "{{ url_for('addrec') }}" method = "POST">
-            <h3>Student Information</h3>
-            Name<br>
-            <input type = "text" name = "nm" /></br>
 
-            Address<br>
-            <textarea name = "add" ></textarea><br>
+            <label for ="EmpID"> ID: </label>
+            <input type="number" id="EmpID" name="EmpID">
 
-            City<br>
-            <input type = "text" name = "city" /><br>
+            <br><br>
+
+            <label for ="EmpName"> Name: </label>
+            <input type="text" id="EmpName" name="EmpName">
+
+            <br><br>
             
-            Zipcode<br>
-            <input type = "text" name = "zip" /><br>
-            <input type = "submit" value = "submit" /><br>
+            <label for="EmpGender" > Gender: </label>
+            <input type="text" id="EmpGender" name="EmpGender">
 
+            <br><br>
+
+            <label for="EmpPhone"> Phone: </label>
+            <input type="number" id="EmpPhone" name="EmpPhone">
+
+            <br><br>
+
+            <label for="EmpBdate"> DOB: </label>
+            <input type="date" id="EmpBdate" name ="EmpBdate">
+
+            <br><br>
+
+            <input type="submit" value="Click to Complete">
+            <br><br>
+
+            <a href = "\"> Click To Return To Home Page </a>
         </form>
     </body>
 </html>
