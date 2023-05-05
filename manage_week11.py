@@ -5,7 +5,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 
 
 
-app = Flask(__name__, template_folder='flask_work')
+app = Flask(__name__, template_folder='/home/aiona/flask_work')
 app.secret_key = "key"
 
 conn = sql.connect('employee.db')
