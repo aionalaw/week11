@@ -1,9 +1,10 @@
 {% extends "bootstrap/base.html" %}
 {% block content %} 
-
+<!doctype html>
 <html>
     <body>
-        <h3> Reservations List</h3>
+        <img src = "/static/logo.png" alt="UB logo" >
+        <h2> Reservations List</h2>
 
         <table class="table table.striped table.bordered">
         <thread class="bg.success">
@@ -13,23 +14,24 @@
             <td>Age</td>
             <td>Phone</td>
             <td>Email</td>
-            <td>ResDate</td>
+            <td>Resrvation Date</td>
 
         </thread>
 
         {% for row in rows %} 
             <tr>
-                <td>{{row["ReservationID"]}}</td>
-                <td>{{row["Name"]}}</td>
-                <td>{{row["Age"]}}</td>
-                <td>{{row["Phone"]}}</td>
-                <td>{{row["Email"]}}</td>
-                <td>{{row["ResDate"]}}</td>
+
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td>{{row[5]}}</td>
             </tr>
         {% endfor %}
         </table>
 
-        <a href ="/"> Return to Main Page</a>
+        <h4> <button> <a href = "/" class="button button.outline.primary button.lg">Return to Main Menu</a></button></h4>
         {% endblock %}
 
     </body>

@@ -34,6 +34,10 @@ def main():
 def register():
     return render_template('reservation.html')
 
+@app.route('/room')
+def room():
+    return render_template('rooms.html')
+
 
 @app.route('/result', methods = ['GET', 'POST'])
 def result():
@@ -57,7 +61,7 @@ def result():
                 c.execute("INSERT INTO hotel (ReservationID,Name,Age,Phone,Email,Resdate) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}')".format(id,name,age,phone,email,date))
             
                 conn.commit()
-                msg = "Reservation successfully made"
+                msg = "Reservation added successfully. We will see you soon!"
 
         except:     
             conn.rollback()

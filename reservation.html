@@ -1,39 +1,42 @@
+{% extends "bootstrap/base.html" %}
+{% block content %} 
+
 <html>
     <body>
-
+        <img src = "/static/logo.png" alt="UB logo" >
         <form action = "{{url_for('result')}}" method = "POST">
-            <h3> Room Reservation Form</h3>
+            <h2> Room Reservation Form</h2>
             <h4>
             <label for = "ReservationID"> Person Number: </label>
-            <input type ="number" id="ReservationID" name="ReservationID">
+            <input type ="number" id="id" name="ReservationID">
             <br>
 
             <label for = "Name"> Guest Name: </label>
-            <input type = "text" id="Name" name="Name">
+            <input type = "text" id="name" name="Name">
             <br>
 
             <label for = "Age"> Age: </label>
-            <input type ="number" id="Age" name="Age">
+            <input type ="number" id="age" name="Age">
             <br>            
 
             <label for = "Phone"> Phone: </label>
-            <input type ="text" id="Phone" name="Phone">
+            <input type ="text" id="phone" name="Phone">
             <br>
 
             <label for = "Email"> Email: </label>
-            <input type ="text" id="Email" name="Email">
+            <input type ="text" id="email" name="Email">
             <br>
 
             <label for = "ResDate"> Reservation Date: </label>
-            <input type ="date" id="ResDate" name="ResDate">
-            <br>
+            <input type ="date" id="date" name="ResDate">
+            <br></h4>
 
-            <input type = "submit" value = "Submit Form"/> 
-            <br>
-            </h4>
-            <button><a href="/" class="button button.outline.primary button.lg"> Return to Main Page</button> </a>
-            <button><a href="/invoice" class="button button.outline.primary button.lg"> Show All Reservations </button></a>
+            <h4><input type = "submit" value = "Submit Form"/> </h4>
+            
+            <h4><button><a href="/" class="button button.outline.primary button.lg"> Return to Main Page</a></button></h4>
+            <h4><button><a href="/invoice" class="button button.outline.primary button.lg"> Show All Reservations </a> </button></h4>
 
         </form>
+        {% endblock %}
     </body>
 </html>
