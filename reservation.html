@@ -1,0 +1,39 @@
+<html>
+    <body>
+
+        <form action = "{{url_for('result')}}" method = "POST">
+            <h3> Room Reservation Form</h3>
+            <h4>
+            <label for = "ReservationID"> Person Number: </label>
+            <input type ="number" id="ReservationID" name="ReservationID">
+            <br>
+
+            <label for = "Name"> Guest Name: </label>
+            <input type = "text" id="Name" name="Name">
+            <br>
+
+            <label for = "Age"> Age: </label>
+            <input type ="number" id="Age" name="Age">
+            <br>            
+
+            <label for = "Phone"> Phone: </label>
+            <input type ="text" id="Phone" name="Phone">
+            <br>
+
+            <label for = "Email"> Email: </label>
+            <input type ="text" id="Email" name="Email">
+            <br>
+
+            <label for = "ResDate"> Reservation Date: </label>
+            <input type ="date" id="ResDate" name="ResDate">
+            <br>
+
+            <input type = "submit" value = "Submit Form"/> 
+            <br>
+            </h4>
+            <button><a href="/" class="button button.outline.primary button.lg"> Return to Main Page</button> </a>
+            <button><a href="/invoice" class="button button.outline.primary button.lg"> Show All Reservations </button></a>
+
+        </form>
+    </body>
+</html>

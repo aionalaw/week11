@@ -1,0 +1,19 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+<html>
+    <body>
+        <h2> Welcome to Library Room Reservation!</h2>
+        <br>
+        <p>The University Libraries offer various types of study spaces for different study needs: silent, individual study areas; group study areas; and individual and collaborative study rooms. 
+          Use our online tool to book study rooms and other spaces in the library.</p>
+
+        <div class ="container">
+            <div class="vertical-center">
+                <h3><button><a href="/register" class="button button.outline.primary button.lg"> Reserve a Room </button> </a></h3> 
+                <h3><button><a href="/invoice" class="button button.outline.primary button.lg"> Show All Reservations </button></a></h3>
+            </div>
+        </div>
+        
+    {% endblock %}
+    </body>
+</html>
